@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="">
+  <meta name="keywords" content="BaB-ND, CROWN">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BAB-ND: Long-Horizon Motion Planning With Branch-and-Bound and Neural Dynamics</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">BAB-ND: Long-Horizon Motion Planning With Branch-and-Bound and Neural Dynamics</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://ece.illinois.edu/about/directory/grad-students/keyis2">Keyi Shen*</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/venom-yu/">Jiangwei Yu*</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://huan-zhang.com/">Huan Zhang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://yunzhuli.github.io/">Yunzhu Li</a><sup>1,2</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Illinois Urbana-Champaign,</span>
+            <span class="author-block"><sup>2</sup>Columbia University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered  is-centered">
+          <img src='static/images/fig_teaser.png'>
+          <br>
+        </div>
+        <br>
+        <h2 class="subtitle has-text-centered">
+        <b>BaB-ND</b> uses branch-and-bound method to plan long-horizon trajectories using neural dynamics model.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Neural-network-based dynamics models learned from observational data have shown strong predictive capabilities for scene dynamics in robotic manipulation tasks. However, their inherent non-linearity presents significant challenges for effective planning. Current planning methods, often dependent on extensive sampling or local gradient descent, struggle with long-horizon motion planning tasks involving complex contact events.
+          </p>
+          <p>
+            In this paper, we present a GPU-accelerated branch-and-bound (BaB) framework for motion planning in manipulation tasks that require trajectory optimization over neural dynamics models. Our approach employs a specialized branching heuristic to divide the search space into sub-domains and applies a modified bound propagation method, inspired by the state-of-the-art neural network verifier α,β-CROWN, to efficiently estimate objective bounds within these sub-domains. The branching process guides planning effectively, while the bounding process strategically reduces the search space.
+          </p>
+          <p>
+            Our framework achieves superior planning performance, generating high-quality state-action trajectories and surpassing existing methods in challenging, contact-rich manipulation tasks such as non-prehensile planar pushing with obstacles, object sorting, and rope routing in both simulated and real-world settings. Furthermore, our framework supports various neural network architectures, ranging from simple multilayer perceptrons to advanced graph neural dynamics models, and scales efficiently with different model sizes.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3">Method Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            We propose a branch-and-bound framework for long-horizon planning, involving branching, bounding, and searching. The branching procedure systematically divides the search space with a heuristic. The bounding procedure efficiently evaluates the lower bounds of objectives. The searching procedure can find high-quality solutions to objectives in sub-domains.
+          </p>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-fullwidth">
+            <img src="static/images/fig_method.png" alt="">
+          </div>
+        </div>
+
+        <h2 class="title is-3">Tasks</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our framework supports various neural network architectures, ranging from MLP to GNN, allowing it to model diverse object properties and interactions.
+          </p>
+        </div>
+        <h3 class="title is-3">Pushing w/ Obstacles</h3>
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-pushing_1">
+              <video poster="" id="pushing_1" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/pushing_T/PR_Crown1.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-pushing_2">
+              <video poster="" id="pushing_2" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/pushing_T/PR_Crown2.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-pushing_3">
+              <video poster="" id="pushing_3" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/pushing_T/PR_Crown3.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-pushing_4">
+              <video poster="" id="pushing_4" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/pushing_T/PR_Crown4.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="title is-3">Object Merging</h3>
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-merging_1">
+              <video poster="" id="merging_1" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/merging_L/PR_Crown1.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-merging_2">
+              <video poster="" id="merging_2" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/merging_L/PR_Crown2.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-merging_3">
+              <video poster="" id="merging_3" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/merging_L/PR_Crown3.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="title is-3">Object Sorting</h3>
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-sorting_1">
+              <video poster="" id="sorting_1" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/obj_pile/PR_Crown1.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-sorting_2">
+              <video poster="" id="sorting_2" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/obj_pile/PR_Crown2.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="title is-3">Roupe Routing</h3>
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-rope_1">
+              <video poster="" id="rope_1" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/rope_routing/Crown1.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-rope_2">
+              <video poster="" id="rope_2" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/rope_routing/Crown2.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+        
+        <h2 class="title is-3">Robustness</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our framework is robust to external perturbations.
+          </p>
+        </div>
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-robustness_1">
+              <video poster="" id="robustness_1" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/robustness/robustness1.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-robustness_2">
+              <video poster="" id="robustness_2" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/robustness/robustness2.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-robustness_3">
+              <video poster="" id="robustness_3" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/robustness/robustness3.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-robustness_4">
+              <video poster="" id="robustness_4" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/robustness/robustness4.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <p>
+            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
