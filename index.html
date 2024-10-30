@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="BAB-ND: Long-Horizon Motion Planning With Branch-and-Bound and Neural Dynamics">
+        content="BaB-ND: Long-Horizon Motion Planning With Branch-and-Bound and Neural Dynamics">
   <meta name="keywords" content="BaB-ND, CROWN">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BAB-ND</title>
@@ -175,56 +175,54 @@
 
 <section class="hero">
   <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Method Overview</h2>
-          <div class="content has-text-justified">
-            <p>We propose a branch-and-bound framework for long-horizon planning, involving branching, bounding, and searching. The branching procedure systematically divides the search space with a heuristic. The bounding procedure efficiently evaluates the lower bounds of objectives. The searching procedure can find high-quality solutions to objectives in sub-domains.
-            </p>
-          </div>
-          <div class="columns is-centered has-text-centered">
-            <div class="column is-fullwidth">
-              <img src="static/images/fig_method.png" alt="">
-            </div>
-          </div>
-        </div>
-
-        <h2 class="title is-3">Tasks</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="container is-max-widescreen">
+        
+        <h2 class="title is-3">Method Overview</h2>
         <div class="content has-text-justified">
-          <p>Our framework supports various neural network architectures, ranging from MLP to GNN, allowing it to model diverse object properties and interactions.
+          <p>We propose a branch-and-bound framework for long-horizon planning, involving branching, bounding, and searching. The branching procedure systematically divides the search space with a heuristic. The bounding procedure efficiently evaluates the lower bounds of objectives. The searching procedure can find high-quality solutions to objectives in sub-domains.
           </p>
         </div>
-        <h3 class="title is-4">Pushing w/ Obstacles</h3>
-        <div class="container">
-          <div id="results-carousel" class="carousel results-carousel">
-            <div class="item item-pushing_1">
-              <video poster="" id="pushing_1" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/pushing_T/PR_Crown1.mp4"
-                        type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-pushing_2">
-              <video poster="" id="pushing_2" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/pushing_T/PR_Crown2.mp4"
-                        type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-pushing_3">
-              <video poster="" id="pushing_3" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/pushing_T/PR_Crown3.mp4"
-                        type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-pushing_4">
-              <video poster="" id="pushing_4" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/pushing_T/PR_Crown4.mp4"
-                        type="video/mp4">
-              </video>
-            </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-fullwidth">
+            <img src="static/images/fig_method.png" alt="">
           </div>
         </div>
+      </div>
 
+      <h2 class="title is-3">Tasks</h2>
+      <div class="content has-text-justified">
+        <p>Our framework supports various neural network architectures, ranging from MLP to GNN, allowing it to model diverse object properties and interactions.
+        </p>
+      </div>
+      <h3 class="title is-4">Pushing w/ Obstacles</h3>
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-pushing_1">
+            <video poster="" id="pushing_1" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/pushing_T/PR_Crown1.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-pushing_2">
+            <video poster="" id="pushing_2" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/pushing_T/PR_Crown2.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-pushing_3">
+            <video poster="" id="pushing_3" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/pushing_T/PR_Crown3.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-pushing_4">
+            <video poster="" id="pushing_4" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/pushing_T/PR_Crown4.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
       </div>
     </div>
   </div>
