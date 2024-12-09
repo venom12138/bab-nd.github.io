@@ -147,15 +147,16 @@
         <div class="column is-full-width">
           <h2 class="title is-3">Main Contributions</h2>
           <div class="content has-text-justified">
+            We present a GPU-accelerated branch-and-bound (BaB) framework for motion planning with neural dynamics models, addressing challenges in long-horizon tasks with complex contact events. Leveraging a novel branching heuristic and modified bound propagation inspired by alpha-beta CROWN, our method outperforms existing approaches in contact-rich tasks like planar pushing, object sorting, and rope routing. The framework supports diverse neural architectures and scales efficiently across model sizes. Our main contributions are as follows:
             <ul>
               <li>
-                <strong>GPU-Accelerated Branch-and-Bound (BaB) Framework</strong>: Introduced a novel BaB approach for trajectory optimization over neural dynamics models, specifically addressing long-horizon motion planning challenges in manipulation tasks.
+                <strong>General BaB-Based Framework</strong>: We propose a widely applicable branch-and-bound (BaB) framework for effective long-horizon motion planning over neural dynamics models.
               </li>
               <li>
-                <strong>Efficient Search with Specialized Heuristics</strong>: Developed a branching heuristic to divide the search space and a modified bound propagation method inspired by α,β-CROWN for efficient objective estimation.
+                <strong>Novel Procedures for Planning</strong>: Our framework introduces innovative branching, bounding, and searching methods, inspired by neural network verification algorithms, specifically adapted for planning tasks involving neural dynamics models.
               </li>
               <li>
-                <strong>Versatility Across Tasks and Models</strong>: Demonstrated superior performance in contact-rich manipulation tasks such as planar pushing with obstacles, object sorting, and rope routing, with support for various neural network architectures.
+                <strong>Demonstrated Effectiveness and Scalability</strong>: We showcase the framework's effectiveness, applicability, and scalability across a range of complex planning problems, including contact-rich manipulation, handling deformable objects, and managing object piles, utilizing diverse model architectures.
               </li>
             </ul>
           </div>
