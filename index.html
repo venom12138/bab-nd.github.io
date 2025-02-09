@@ -50,31 +50,40 @@
           <h1 class="title is-1 publication-title">BaB-ND: Long-Horizon Motion Planning with Branch-and-Bound and Neural Dynamics</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://ece.illinois.edu/about/directory/grad-students/keyis2">Keyi Shen</a><sup>1*</sup>,</span>
+              <a href="https://keyis2.github.io/">Keyi Shen</a><sup>1*</sup>,
+            </span>
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/venom-yu/">Jiangwei Yu</a><sup>1*</sup>,</span>
+              <a href="https://www.linkedin.com/in/venom-yu/">Jiangwei Yu</a><sup>1*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=mLFRRpkAAAAJ">Jose Barreiros</a><sup>2</sup>,
+            </span>
             <span class="author-block">
               <a href="https://huan-zhang.com/">Huan Zhang</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://yunzhuli.github.io/">Yunzhu Li</a><sup>2</sup>
+              <a href="https://yunzhuli.github.io/">Yunzhu Li</a><sup>3</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>University of Illinois Urbana-Champaign,</span>
-            <span class="author-block"><sup>2</sup>Columbia University</span>
+            <span class="author-block"><sup>2</sup>Toyota Research Institute,</span>
+            <span class="author-block"><sup>3</sup>Columbia University</span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>*</sup> Equal Contribution</span>
           </div>
-
+        <!-- </br> -->
+        <div class="is-size-4 publication-authors">
+          <span class="author-block">ICLR 2025</span>
+        </div>
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href=""
+                <a href="static/bab-nd.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -83,7 +92,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href=""
+                <a href="https://arxiv.org/abs/2412.09584"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -93,7 +102,7 @@
               </span>
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://youtu.be/qXIX3YemSQ8"
+                <a href="https://youtu.be/4molJNMHCVE"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -103,7 +112,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href=""
+                <a href="https://github.com/keyis2/BaB-ND"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -187,30 +196,26 @@
   </div>
 </section>
 
-<section class="hero">
+<section class="hero is-light is-small">
   <div class="hero-body">
-    <div class="columns is-centered has-text-centered">
-      <div class="container is-max-widescreen">
-
-        <h2 class="title is-3">Method Overview</h2>
-        <br>
-        <div class="subtitle has-text-justified">
-          <p>We propose a branch-and-bound framework for long-horizon planning, involving branching, bounding, and searching.</p>
-          <ul>
-            <li>
-              The branching procedure systematically divides the search space with a heuristic. 
-            </li>
-            <li>
-              The bounding procedure efficiently evaluates the lower bounds of objectives.
-            </li> 
-            <li>
-              The searching procedure can find high-quality solutions to objectives in sub-domains.
-            </li>
-          </ul>
-        </div>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-fullwidth">
-            <img src="static/images/fig_method.png" alt="">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <!-- <div class="container is-max-widescreen"> -->
+        <div class="column is-full-width">
+          <h2 class="title is-3">Method Overview</h2>
+          <!-- <br> -->
+          <div class="content has-text-justified">
+            We propose a branch-and-bound framework for long-horizon planning, involving branching, bounding, and searching.
+            <ul>
+              <li>The branching procedure systematically divides the search space with a heuristic. </li>
+              <li>The bounding procedure efficiently evaluates the lower bounds of objectives.</li> 
+              <li>The searching procedure can find high-quality solutions to objectives in sub-domains.</li>
+            </ul>
+          </div>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-fullwidth">
+              <img src="static/images/fig_method.png" alt="">
+            </div>
           </div>
         </div>
       </div>
@@ -223,10 +228,9 @@
     <div class="columns is-centered has-text-centered">
       <div class="container is-max-widescreen">
         <h2 class="title is-3">Tasks</h2>
-        <br>
-        <div class="subtitle has-text-justified">
-          <p>We evaluate our framework on four complex robotic manipulation tasks involving non-smooth objectives, non-convex feasible regions and requiring long action sequences. Different architectures of neural dynamics like MLP and GNN are leveraged for different scenarios.
-          </p>
+        <!-- <br> -->
+        <div class="content has-text-justified">
+          We evaluate our framework on four complex robotic manipulation tasks involving non-smooth objectives, non-convex feasible regions and requiring long action sequences. Different architectures of neural dynamics like MLP and GNN are leveraged for different scenarios.
         </div>
         <div class="container">
           <div id="results-carousel" class="carousel results-carousel">
@@ -349,9 +353,8 @@
     <div class="columns is-centered has-text-centered">
       <div class="container is-max-widescreen">
         <h2 class="title is-3">Acknowledgments</h2>
-        <br>
-        <div class="subtitle has-text-justified">
-          <p>This work is supported by Toyota Research Institute (TRI). We thank Jose Barreiros, Hongkai Dai, Aykut Onol and Mengchao Zhang for their constructive suggestions on the paper manuscript. We also thank Mingtong Zhang, Haozhe Chen, Baoyu Li and Binghao Huang for their help with real-world experiments and simulation environment development. This article reflects solely the opinions and conclusions of its authors, not those of TRI or any other Toyota entity.</p>
+        <div class="content has-text-justified">
+          This work is supported by Toyota Research Institute (TRI). We thank Jose Barreiros, Hongkai Dai, Aykut Onol and Mengchao Zhang for their constructive suggestions on the paper manuscript. We also thank Mingtong Zhang, Haozhe Chen, Baoyu Li and Binghao Huang for their help with real-world experiments and simulation environment development. This article reflects solely the opinions and conclusions of its authors, not those of TRI or any other Toyota entity.
         </div>
       </div>
     </div>
@@ -361,10 +364,10 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{shen2024babndlonghorizonmotionplanning,
+    <pre><code>@misc{shen2025babndlonghorizonmotionplanning,
       title={BaB-ND: Long-Horizon Motion Planning with Branch-and-Bound and Neural Dynamics}, 
-      author={Keyi Shen and Jiangwei Yu and Huan Zhang and Yunzhu Li},
-      year={2024},
+      author={Keyi Shen and Jiangwei Yu and Jose Barreiros and Huan Zhang and Yunzhu Li},
+      year={2025},
       eprint={2412.09584},
       archivePrefix={arXiv},
       primaryClass={cs.RO},
